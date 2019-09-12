@@ -3,6 +3,9 @@ it('i want to kone income of date 05 and month 02 and year 2000 result ==500', (
   // totalOfIncomeEachYarAndMonthAndDate
   const dataMoneys = [
     { type: 'income', money: 500, date: +new Date('02/05/2000') },
+    { type: 'income', money: 500, date: +new Date('02/06/2000') },
+    { type: 'income', money: 500, date: +new Date('02/06/2000') },
+
     { type: 'income', money: 1000, date: +new Date('02/05/1990') },
     { type: 'income', money: 1000, date: +new Date('03/05/1990') },
     { type: 'income', money: 1000, date: +new Date('05/03/1990') },
