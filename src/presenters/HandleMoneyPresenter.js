@@ -1,13 +1,13 @@
 class HandleMoney {
-  dataMoneys
+  dataMoneys = []
   constructor(dataMoneys) {
     this.dataMoneys = dataMoneys
   }
 
-  totalOfIncomeEachYearAndMonth = (year, month) =>
-    this.filterDataEachOfYearAndOfMonth(year, month, 'income')
-      .map(data => data.money)
-      .reduce((sumV, val) => sumV + val)
+  filterDataEachOfYearAndOfMonthOfDate = (year, month, date, type) =>
+    this.filterDataEachOfYearAndOfMonth(year, month, type).filter(data =>
+      new Date(data.date).getDate()
+    )
 
   filterDataEachOfYearAndOfMonth = (year, month, type) =>
     this.filterDataEachofYear(year, type).filter(
@@ -19,15 +19,30 @@ class HandleMoney {
       .filter(data => new Date(data.date).getFullYear() === year)
       .filter(data => data.type === type)
 
+  totalOfIncomeEachYarAndMonthAndDate = (year, month, date) =>
+    this.filterDataEachOfYearAndOfMonthOfDate(year, month, date, 'income')
+      .map(data => data.money)
+      .reduce((sumV, val) => sumV + val, 0)
+
+  totalOfOutComeEachYearAndMonth = (year, month) =>
+    this.filterDataEachOfYearAndOfMonth(year, month, 'outcome')
+      .map(data => data.money)
+      .reduce((sumV, val) => sumV + val, 0)
+
+  totalOfIncomeEachYearAndMonth = (year, month) =>
+    this.filterDataEachOfYearAndOfMonth(year, month, 'income')
+      .map(data => data.money)
+      .reduce((sumV, val) => sumV + val, 0)
+
   totalOfOutComeEachYear = year =>
     this.filterDataEachofYear(year, 'outcome')
       .map(data => data.money)
-      .reduce((sumMoney, moneyEachData) => sumMoney + moneyEachData)
+      .reduce((sumMoney, moneyEachData) => sumMoney + moneyEachData, 0)
 
   totalOfIncomeEachYear = year =>
     this.filterDataEachofYear(year, 'income')
       .map(data => data.money)
-      .reduce((sumMoney, moneyEachData) => sumMoney + moneyEachData)
+      .reduce((sumMoney, moneyEachData) => sumMoney + moneyEachData, 0)
 
   totalOfIncome = () =>
     this.dataMoneys
@@ -41,11 +56,8 @@ class HandleMoney {
       .map(data => data.money)
       .reduce((sumV, val) => sumV + val, 0)
 
-  averageTransection() {
-    const resultIncome = this.totalOfIncome()
-    const resultOutcome = this.totalOfOutComeMoney()
-    return resultIncome - resultOutcome
-  }
+  averageTransection = (resultIncome, resultOutcome) =>
+    resultIncome - resultOutcome
 }
 
 export default HandleMoney
