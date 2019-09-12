@@ -8,9 +8,14 @@
 body {
   margin: 0;
   padding: 0;
-  background: #202040;
+  background: rgb(30, 31, 34);
 }
 .container {
   width: 90%;
   margin: auto;
+}
+.container-fluid {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  grid-gap: 1em;
 }

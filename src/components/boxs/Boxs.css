@@ -1,8 +1,9 @@
 .box-all-input-format {
   border-radius: 3px;
-  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.3);
-  background: #202060;
-  padding: 20px;
+
+  background: rgb(9, 11, 11);
+  padding: 10px;
+  padding-bottom: 30px;
 }
 .title-box {
   color: white;

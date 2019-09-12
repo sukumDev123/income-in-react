@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
-import Button from '../button/Button'
+import Button from '../../button/Button'
 import MainInput from '../../input/MainInput'
 import Boxs from '../../boxs/Boxs'
+import AuthPresenter from '../../../presenters/AuthPresenter'
 
 function SignUp() {
+  const authPresenter = new AuthPresenter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [passwordAgain, setPasswordAgain] = useState('')
 
   const whenUserInputEmail = e => {
-    const emailVal = e.tager.value
+    const emailVal = e.target.value
     setEmail(emailVal)
   }
   const whenUserInputPassword = e => {
@@ -25,6 +27,7 @@ function SignUp() {
     const checkPasswordAndPasswordAgainIsEqual = password === passwordAgain
     if (checkPasswordAndPasswordAgainIsEqual === true) {
       console.log('Sign up success.')
+      //TODO when user want to create new user.
     } else {
       console.log('Sign up not success.')
     }
@@ -32,8 +35,9 @@ function SignUp() {
 
   const whenUserSignUp = e => {
     e.preventDefault()
-    const checkValueMustNotEmpty =
-      email !== '' && password !== '' && passwordAgain !== ''
+    const checkValueMustNotEmpty = authPresenter.checkValueMustNotEmpty([
+      [email, password, passwordAgain]
+    ])
 
     if (checkValueMustNotEmpty) {
       doWhenValueisNotEmptyWord()
@@ -61,7 +65,11 @@ function SignUp() {
         onChange={whenUserInputPasswordAgain}
         type={'password'}
       ></MainInput>
-      <Button onClick={whenUserSignUp} text={'Sign Up'}></Button>
+      <Button
+        className={'btn-primary'}
+        onClick={whenUserSignUp}
+        text={'Sign Up'}
+      ></Button>
     </Boxs>
   )
 }

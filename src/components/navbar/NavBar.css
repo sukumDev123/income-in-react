@@ -1,27 +1,36 @@
 .navbox {
-  background: #202060;
-  display: flex;
-  flex-wrap: nowrap;
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+  background: rgb(9, 11, 11);
+
+  min-height: 800px;
+}
+.nav-box > h2 {
+  color: white;
+  text-align: center;
+}
+.nav-link {
+  list-style: none;
+  color: white;
+  padding: 20px;
+  font-weight: bold;
+}
+.navLink {
+  color: white;
+  transition: all 0.3s ease-in;
+}
+.navLink:hover {
+  background: rgb(36, 38, 182);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 20px;
+  color: white;
 }
 
-.nav-box-right {
-  display: flex;
+.li-clicked {
+  background: white;
+  color: black;
   padding: 20px;
-  flex-direction: row-reverse;
   width: 100%;
-}
-.nav-box-right > div {
-  color: white;
-  margin-left: 20px;
-  font-weight: bold;
-  cursor: pointer;
-}
-.nav-box-left {
-  width: 100%;
-}
-.nav-box-left > div {
-  color: white;
-  padding: 20px;
-  cursor: pointer;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  transition: all 0.3s ease-in;
 }
