@@ -5,8 +5,8 @@ class HandleMoney {
   }
 
   filterDataEachOfYearAndOfMonthOfDate = (year, month, date, type) =>
-    this.filterDataEachOfYearAndOfMonth(year, month, type).filter(data =>
-      new Date(data.date).getDate()
+    this.filterDataEachOfYearAndOfMonth(year, month, type).filter(
+      data => new Date(data.date).getDate() === date
     )
 
   filterDataEachOfYearAndOfMonth = (year, month, type) =>
