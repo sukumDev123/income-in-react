@@ -1,0 +1,25 @@
+.box-add-ts {
+  display: grid;
+  grid-template-columns: 45% 50%;
+  grid-gap: 1em;
+}
+.addText {
+  color: white;
+  font-weight: bold;
+}
+.list-div {
+  background: rgb(53, 52, 52);
+  padding: 20px;
+  border-bottom: 2px solid;
+  color: white;
+}
+.block_list {
+  /* background: red; */
+  max-height: 600px;
+  overflow: auto;
+}
+.btn50-50 {
+  display: flex;
+  width: 85%;
+  margin: 10px auto;
+}
