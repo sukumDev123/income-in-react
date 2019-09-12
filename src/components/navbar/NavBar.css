@@ -1,0 +1,27 @@
+.navbox {
+  background: #202060;
+  display: flex;
+  flex-wrap: nowrap;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+.nav-box-right {
+  display: flex;
+  padding: 20px;
+  flex-direction: row-reverse;
+  width: 100%;
+}
+.nav-box-right > div {
+  color: white;
+  margin-left: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.nav-box-left {
+  width: 100%;
+}
+.nav-box-left > div {
+  color: white;
+  padding: 20px;
+  cursor: pointer;
+}

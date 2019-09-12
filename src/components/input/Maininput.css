@@ -1,0 +1,16 @@
+.input-style {
+  border-radius: 3px;
+  margin: 0;
+  padding: 20px 0 20px 20px;
+  border: 0;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.input-box > label {
+  color: white;
+}
+.input-box {
+  width: 80%;
+  margin: auto;
+}
