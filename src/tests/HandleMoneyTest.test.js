@@ -43,8 +43,9 @@ it('i want to know income of month 02 and year 2000 result will return 1000', ()
 it('i want to know income of month 02 and year 2000 result will return 1000', () => {
   const dataMoneys = [
     { type: 'income', money: 500, date: +new Date('02/05/2000') },
-    { type: 'income', money: 1000, date: +new Date('02/05/1990') },
-    { type: 'income', money: 1000, date: +new Date('03/05/1990') },
+    { type: 'income', money: 1000, date: +new Date('03/05/2000') },
+    { type: 'outcome', money: 1000, date: +new Date('02/05/2000') },
+    { type: 'income', money: 1000, date: +new Date('05/03/1990') },
     { type: 'income', money: 1000, date: +new Date('05/03/1990') },
     { type: 'income', money: 1000, date: +new Date('05/03/2000') },
     { type: 'outcome', money: 500, date: +new Date('06/02/2000') }
