@@ -1,13 +1,15 @@
 import React from 'react'
 import Boxs from '../../boxs/Boxs'
 import './AddTransection.css'
+import MoneyForMat from '../../MoneyForMat'
+
 function ListOfEachData({ notes, type, money }) {
   return (
     <div className="list-div">
       <p>{notes}</p>
       <div className="type-money">
-        <strong>{type}</strong>
-        <strong>{money}</strong>
+        <h3>{type}</h3>
+        <MoneyForMat money={money}></MoneyForMat>
       </div>
     </div>
   )

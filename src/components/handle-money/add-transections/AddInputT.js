@@ -3,12 +3,14 @@ import Boxs from '../../boxs/Boxs'
 import MainInput from '../../input/MainInput'
 import Selecter from '../../selecter/Selecter'
 import Button from '../../button/Button'
+
 function AddInputT({ setToList }) {
   const option_data = ['income', 'outcome']
   // type
-  const [seleted_type, setSeletedType] = useState('')
+  const [seleted_type, setSeletedType] = useState(option_data[0])
   // money
   const [money, setMoney] = useState('')
+
   const whenUserAddMoney = e => {
     const moneyV = e.target.value
     setMoney(moneyV)
