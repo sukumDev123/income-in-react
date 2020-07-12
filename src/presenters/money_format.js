@@ -4,7 +4,7 @@ export function money_format(money) {
   const moneyStringToArray = filterMoneyOnlyIntAndOnlyDecimal[0].split('')
   const sizeData = moneyStringToArray.length
   const formatMoney = moneyStringToArray.map((data, ind) => {
-    const checkIfIndLastNotNeedToUseFormatMoney = ind != sizeData - 1
+    const checkIfIndLastNotNeedToUseFormatMoney = ind !== sizeData - 1
     if (checkIfIndLastNotNeedToUseFormatMoney) {
       // 1234567 when index mod 3 === 0 , I want to use , between integrate.
 
